@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import FadeUpWrapper from "./FadeUpWrapper";
-import ProjectCard from "./ProjectCard";
+import FadeUpWrapper from "../components/FadeUpWrapper";
+import ProjectCard from "../components/ProjectCard";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 const base = import.meta.env.BASE_URL;
