@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 import { useIsMobile } from "../hooks/useIsMobile";
 import profilePic from "../../public/media/Profile Picture/pic.png";
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
 
 const techSkills = [
   { category: "Frontend", items: "React, TailwindCSS, HTML, CSS, JavaScript" },
@@ -27,7 +29,13 @@ const accent = "#00ffcc";
 export default function AboutMe() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-
+  const bioRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: bioRef,
+    offset: ["start center", "end start"],
+  });
+  const bioY = useTransform( scrollYProgress, [0, 0.65, 1], ["0%", "0%", "-180%"]);
+  const bioOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0]);
   return (
     <motion.div
       key="about"
@@ -92,7 +100,18 @@ export default function AboutMe() {
         </div>
       </FadeUpWrapper> */}
       {/*Profile Pic + BIO + name */}
-        <FadeUpWrapper delay={0}>
+      <motion.div ref={bioRef} style={{ y: bioY, opacity: bioOpacity }}>
+        <motion.div
+          initial={{ opacity: 0, y: 300, sclare: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1}}
+          transition={{
+            type: "spring",
+            stiffness: 600,
+            damping: 25,
+            mass: 1,
+            delay: 0.1,
+          }}  
+        >
         <div
           style={{
             display: "flex",
@@ -154,7 +173,8 @@ export default function AboutMe() {
             </p>
           </div>
         </div>
-      </FadeUpWrapper>
+      </motion.div>
+      </motion.div>
 
       {/* Tech stack*/}
       <FadeUpWrapper delay={0.17}>
