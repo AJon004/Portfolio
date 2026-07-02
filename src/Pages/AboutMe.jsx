@@ -179,7 +179,7 @@ export default function AboutMe() {
 
       {/* Tech stack*/}
       <ScrollRevealX>
-        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+        <div style={{ textAlign: "left", marginBottom: "2.5rem" }}>
           <p
             style={{
               color: "#f1f1f1",
@@ -200,7 +200,7 @@ export default function AboutMe() {
               flexWrap: "wrap",
               gap: "0.8rem",
               marginTop: "1.5rem",
-              justifyContent: "center"
+              justifyContent: "left"
             }}
           >
             {[
