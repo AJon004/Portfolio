@@ -5,14 +5,15 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import profilePic from "../../public/media/Profile Picture/pic.png";
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
+import ScrollRevealX from "../components/ScrollRevealX";
 
-const techSkills = [
+{/*const techSkills = [
   { category: "Frontend", items: "React, TailwindCSS, HTML, CSS, JavaScript" },
   { category: "Backend", items: "Django, Django REST" },
   { category: "Framework Mobile/Web", items: "Flutter" },
   { category: "Databases", items: "Firebase, PostgreSQL" },
   { category: "Tools", items: "Git, GitHub, Vite, Pygame" },
-];
+];*/}
 
 const softSkills = [
   "Problem-solving",
@@ -177,8 +178,8 @@ export default function AboutMe() {
       </motion.div>
 
       {/* Tech stack*/}
-      <FadeUpWrapper delay={0.17}>
-        <div style={{ textAlign: "left", marginBottom: "2.5rem" }}>
+      <ScrollRevealX>
+        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <p
             style={{
               color: "#f1f1f1",
@@ -199,7 +200,7 @@ export default function AboutMe() {
               flexWrap: "wrap",
               gap: "0.8rem",
               marginTop: "1.5rem",
-              justifyContent: "flex-start"
+              justifyContent: "center"
             }}
           >
             {[
@@ -225,7 +226,7 @@ export default function AboutMe() {
             ))}
           </div>
         </div>
-      </FadeUpWrapper>
+      </ScrollRevealX>
 
       {/* Worked On/ Background */}
       <FadeUpWrapper delay={0.2}>
