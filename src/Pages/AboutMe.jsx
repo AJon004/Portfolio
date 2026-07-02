@@ -106,7 +106,7 @@ export default function AboutMe() {
             padding: isMobile ? "1.5rem" : "2.5rem",
           }}
         >
-          {/* Avatar — swap SVG for <img src={heroImg} /> when ready */}
+          {/* Avatar - the blue cat bender */}
           <div
             style={{
               flex: "0 0 auto",
@@ -140,9 +140,9 @@ export default function AboutMe() {
               style={{
                 fontFamily: fontBody,
                 color: "#f1f1f1",
-                fontSize: isMobile ? "1.1rem" : "1.9rem",
+                fontSize: isMobile ? "1.5rem" : "1.9rem",
                 lineHeight: 1.7,
-                margin: "0 6rem 1rem",
+                margin: isMobile ? "0 0 1rem" : "0 6rem 1rem",
                 maxWidth: "650px",
               }}
             >
@@ -164,7 +164,7 @@ export default function AboutMe() {
               color: "#f1f1f1",
               fontFamily: fontDisplay,
               fontWeight: 700,
-              fontSize: isMobile ? "1.1rem" : "2.6rem",
+              fontSize: isMobile ? "1.5rem" : "2.6rem",
               margin: "0 0 0.5rem",
               display: "inline-block",
               borderBottom: `3px solid ${accent}`,
@@ -192,11 +192,12 @@ export default function AboutMe() {
                 style={{
                   color: "#aaaaaa",
                   fontFamily: fontBody,
-                  fontSize: isMobile ? "1rem" : "2.4rem",
+                  fontSize: isMobile ? "1.5rem" : "2.4rem",
                   padding: "0.4rem 1rem",
                   borderRadius: "2rem",
                   fontWeight: 600,
                   border: "1px solid #2a2a2a",
+                  
                 }}
             >
               {tech}
